@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package event.store;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+import "event.proto";
+
+option go_package = "moul.io/event/store";
+option (gogoproto.sizer_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+
+service Store {
+  rpc GetEvents(EventFilter) returns (GetEventsResponse) {}
+  rpc CreateEvent(event.Event) returns (CreateEventResponse) {}
+}
+
+message EventFilter {
+  event.Event event = 1;
+}
+
+message CreateEventResponse {
+  bool is_success = 1;
+  string error = 2;
+}
+
+message GetEventsResponse {
+  repeated Event events = 1;
+}
