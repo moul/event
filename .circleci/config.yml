@@ -22,7 +22,6 @@ jobs:
       - retry/install
       - tools/mod-download
       - tools/mod-tidy-check
-      - run: retry -m 3 make install
       - run: retry -m 3 make unittest
       - moul/install_golangci-lint
       - run: PATH=$PATH:$(pwd)/bin retry -m 3 make lint

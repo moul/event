@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package event;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option go_package = "moul.io/event";
+option (gogoproto.sizer_all) = true;
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+
+message Event {
+  string aggregate_id = 1;   // reusable uuid
+  string aggregate_type = 2; // entity-name
+  string event_id = 3;       // unique uuid
+  string event_type = 4;     // verb
+  string event_data = 5;     // JSON data
+}
