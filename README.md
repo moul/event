@@ -1,6 +1,6 @@
 # event
 
-:smile: event
+:smile: event-source + protobuf
 
 [![CircleCI](https://circleci.com/gh/moul/event.svg?style=shield)](https://circleci.com/gh/moul/event)
 [![GoDoc](https://godoc.org/moul.io/event?status.svg)](https://godoc.org/moul.io/event)
@@ -9,35 +9,19 @@
 [![Go Report Card](https://goreportcard.com/badge/moul.io/event)](https://goreportcard.com/report/moul.io/event)
 [![CodeFactor](https://www.codefactor.io/repository/github/moul/event/badge)](https://www.codefactor.io/repository/github/moul/event)
 [![codecov](https://codecov.io/gh/moul/event/branch/master/graph/badge.svg)](https://codecov.io/gh/moul/event)
-[![Docker Metrics](https://images.microbadger.com/badges/image/moul/event.svg)](https://microbadger.com/images/moul/event)
 [![Sourcegraph](https://sourcegraph.com/github.com/moul/event/-/badge.svg)](https://sourcegraph.com/github.com/moul/event?badge)
 [![Made by Manfred Touron](https://img.shields.io/badge/made%20by-Manfred%20Touron-blue.svg?style=flat)](https://manfred.life/)
 
 
 ## Usage
 
-```console
-$ event -h
-...
-```
+See [GoDoc](https://godoc.org/moul.io/event)
 
 ## Install
-
-### Using go
 
 ```console
 $ go get -u moul.io/event
 ```
-
-### Using brew
-
-```console
-$ brew install moul/moul/event
-```
-
-### Download releases
-
-https://github.com/moul/event/releases
 
 ## License
 

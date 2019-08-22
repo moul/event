@@ -37,4 +37,8 @@
 //	|/  |       |  \    \ /                    /  ' \/ _ \/ // / / |
 //	||  |       |  |    | |                   /_/_/_/\___/\_,_/_/  |
 //	+--------------------------------------------------------------+
-package main // import "moul.io/event"
+package event // import "moul.io/event"
+
+import "github.com/gogo/protobuf/gogoproto"
+
+var _ = gogoproto.IsEmbed // always keep gogoproto in go.mod

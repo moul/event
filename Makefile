@@ -1,8 +1,7 @@
 GO ?= go
-DOCKER_IMAGE ?= moul/event
 
 .PHONY: test
-test: unittest lint tidy
+test: generate unittest lint tidy
 
 .PHONY: unittest
 unittest:
@@ -29,3 +28,14 @@ tidy:
 	  cd $$dir; \
 	  $(GO)	mod tidy; \
 	); done
+
+.PHONY: generate
+generate: event.pb.go
+
+%.pb.go: %.proto
+	go mod vendor
+	protoc \
+	  -I vendor:. \
+	  --grpc-gateway_out=logtostderr=true:"$(GOPATH)/src" \
+	  --gogofaster_out=plugins=grpc:"$(GOPATH)/src" \
+	  "$(dir $<)"/*.proto
