@@ -9,10 +9,36 @@ option (gogoproto.sizer_all) = true;
 option (gogoproto.marshaler_all) = true;
 option (gogoproto.unmarshaler_all) = true;
 
+//
+// Event
+//
+
 message Event {
   string aggregate_id = 1;   // reusable uuid
   string aggregate_type = 2; // entity-name
   string event_id = 3;       // unique uuid
   string event_type = 4;     // verb
   string event_data = 5;     // JSON data
+}
+
+//
+// Event Store
+//
+
+service Store {
+  rpc EventList(EventListFilter) returns (EventListResponse) {}
+  rpc CreateEvent(Event) returns (CreateEventResponse) {}
+}
+
+message EventListFilter {
+
+}
+
+message CreateEventResponse {
+  bool is_success = 1;
+  string err_msg = 2;
+}
+
+message GetEventsResponse {
+  repeated Event events = 1;
 }
