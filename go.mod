@@ -4,5 +4,5 @@ go 1.12
 
 require (
 	github.com/gogo/protobuf v1.3.2
-	google.golang.org/grpc v1.38.0
+	google.golang.org/grpc v1.51.0
 )
